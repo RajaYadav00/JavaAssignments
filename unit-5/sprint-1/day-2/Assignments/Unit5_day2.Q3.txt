@@ -1,0 +1,17 @@
+Q 3 Explain what is a PK, Candidate Key, Prime Attributes, Non-prime Attributes ?
+
+ans:
+          PRIMARY KEY:  It is an attribute of the column in SQL which is unique
+                                   and can not have a null value;
+                                    A Table can have only one primary key;
+
+           CANDIDATE KEY: the attribute of the column which can be defined as the primary key is a candidate key
+                                       1- every primary key is a candidate key but vice-versa is not true;  
+                                       2- candidate key column can have a null value;
+                                        3- it also identifies uniquely in a table;
+
+             PRIME ATTRIBUTES: the column which can be defined as candidate keys known as prime attributes  
+                                 example:roll_No,email_is;
+
+            NON-PRIME ATTRIBUTES:-The Attribute of column which can not defined as candidate key are known as Non-prime Attribute
+                                    Examle:name,age,City;

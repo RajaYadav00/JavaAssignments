@@ -1,0 +1,19 @@
+
+ method wait and notify  belongs to Object class;
+     wait()    :--
+   ----------      when we need to suspend a synchronized thread unconditionally then we use wait();
+                        
+   						once thread call wait() method on any object it release the lock first of that object and get in waiting state immediately;
+   						
+     
+     Notify()   :-- once thread calls notify method on any object class it also releases the lock of that object but not immediately.
+     -------------
+     
+     
+     Wait and notify or notifyAll method belongs to Object class because a thread call these method on any java object.						
+     
+     
+     
+     
+     To call wait or notify()  method on any object we must have that particular object lock  other wise we get an exception called illegalMonitorstateexcaption;
+     NOTE :-- WE CAN CALL WAIT NOTIFY AND NOTIFYALL  IN SYNCHRONIZE BLOCK OR METHOD ONLY OTHER WISE IT WILL WE WILL GET RUNTIME EXCEPTION;

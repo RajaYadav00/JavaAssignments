@@ -1,0 +1,35 @@
+Q1:
+ans:mysql> select * from faculty;
++-----------+---------+------------+--------+--------+---------------+
+| FacultyId | Name    | Department | Gender | Salary | Working_hours |
++-----------+---------+------------+--------+--------+---------------+
+|         1 | Akash   | CS         | M      |  50000 |            45 |
+|         2 | Sahil   | EC         | M      |  25000 |            50 |
+|         3 | John    | HSS        | M      | 100000 |            60 |
+|         4 | Shelley | CS         | F      | 100000 |            80 |
+|         5 | Anannya | CS         | F      |  75000 |           100 |
+|         6 | Sia     | HSS        | F      |  60000 |            40 |
++-----------+---------+------------+--------+--------+---------------+
+6 rows in set (0.00 sec)
+
+mysql> select * ,
+    ->      CASE
+    ->      WHEN  department="CS" THEN "Computer Science"
+    ->      WHEN  department="EC" THEN "Electronic and Communication"
+    ->      WHEN  department="HSS" THEN "Humanities and Social Science"
+    ->      END
+    ->      AS
+    ->       DEPARTMENT
+    ->      FROM
+    ->      faculty;
++-----------+---------+------------+--------+--------+---------------+-------------------------------+
+| FacultyId | Name    | Department | Gender | Salary | Working_hours | DEPARTMENT                    |
++-----------+---------+------------+--------+--------+---------------+-------------------------------+
+|         1 | Akash   | CS         | M      |  50000 |            45 | Computer Science              |
+|         2 | Sahil   | EC         | M      |  25000 |            50 | Electronic and Communication  |
+|         3 | John    | HSS        | M      | 100000 |            60 | Humanities and Social Science |
+|         4 | Shelley | CS         | F      | 100000 |            80 | Computer Science              |
+|         5 | Anannya | CS         | F      |  75000 |           100 | Computer Science              |
+|         6 | Sia     | HSS        | F      |  60000 |            40 | Humanities and Social Science |
++-----------+---------+------------+--------+--------+---------------+-------------------------------+
+6 rows in set (0.00 sec)

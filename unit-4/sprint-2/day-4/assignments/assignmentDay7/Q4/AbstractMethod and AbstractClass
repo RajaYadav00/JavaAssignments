@@ -1,0 +1,44 @@
+    Explain about an abstract method and an abstract class with an example.
+    
+    Abstraction means hiding the implememtaation details and showing only functionality;
+    
+    Abstract class:-
+    
+     To make a class to behave as abstract class we need to declare it as (abstract class.) 
+     A abstract class may have abstract and non abstract method.
+     It need to be extend and its abstract method shoud be overriden;
+     It can not be instanciated.
+     
+     IMPORTENT POINTS OF ABSTRACT CLASS:
+     
+     1:-it should be declared with abstract keyword.
+     2:-it can have abstract or non abstract method.
+     3:-it can have constructor and static method also.
+     4:-it can have final method which will force the subclass not to change the body of the method.
+     
+     
+     Abstract Method :-
+        If we want only method declaration in super class than we have to use abstract key word as access-modifire.
+        this method is sometime called as subclass responsibility.because they have no method body in super-class.Thus
+        a subclass must override them to privide method body or definition
+        
+                 abstract type method-name(parameter-list);
+                 
+        Any concrete class that extends an abstract class must override all the abstract methods of the class.         
+        
+     ABSTRACT METHOD IMPORTENT POINTS
+     1:- They only have method signature not the method body.
+     2:- We can not write a abstract method in concrete class.i.e. only abstract class can have abstract method.
+     3:- ILLIGAL COMBINATIONS
+           1:-	final-abstract
+           b:-  abstract static
+           c:-  abstract private    
+           
+           
+           
+       example:-
+       
+       public abstract class Example{
+       		
+       		abstract void getvalue();
+       } 

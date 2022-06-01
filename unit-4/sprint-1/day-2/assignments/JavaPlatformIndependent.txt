@@ -1,0 +1,17 @@
+         PLATEFORM INDEPENDENT
+         
+   Plate form independent means a program can run on any platform ;
+   Java is a plate form independent programming language .because of JDK JRE JVM.
+   
+   How does java manage platform-independent?
+   
+   The program written in java is stored in a .java file which is the source code.
+   the .java file is converted into a .class file in the form of bytecode by compiler which is in JDK.
+   the byte-code can be executed by JVM on any operating system where JRE(jvm) is installed.
+   
+   																	   run		
+   .JAVA(source-code)----->compiler---->.Class(byte-code)-------->JVM--------------->output
+         												 (at any operating system)
+   
+   
+   this whole things make java platform independent.    												 

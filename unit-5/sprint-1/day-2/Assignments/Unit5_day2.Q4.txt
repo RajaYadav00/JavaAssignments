@@ -1,0 +1,88 @@
+mysql> use student_details;
+Database changed
+mysql> show tables;
++---------------------------+
+| Tables_in_student_details |
++---------------------------+
+| marks                     |
+| students                  |
++---------------------------+
+2 rows in set (0.01 sec)
+
+mysql> desc students;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| student_Id | int         | NO   | PRI | NULL    |       |
+| name       | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(20) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc marks;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| marks_Id   | int         | NO   | PRI | NULL    |       |
+| subject    | varchar(20) | YES  |     | NULL    |       |
+| score      | int         | YES  |     | NULL    |       |
+| student_id | int         | YES  | MUL | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students;
++------------+-----------------+----------+
+| student_Id | name            | address  |
++------------+-----------------+----------+
+|          1 | Rahul Kumar     | DELHI    |
+|          2 | Raja Yadav      | SAKET    |
+|          3 | Najmush Saaquib | BADARPUR |
+|          4 | Satyajeet       | ODISHA   |
+|          5 | Aman Yadav      | BIHAR    |
+|          6 | Rahul 2.0       | BIHAR    |
+|          7 | Moni            | DELHI    |
+|          8 | Ishi            | DOON     |
++------------+-----------------+----------+
+8 rows in set (0.01 sec)
+
+mysql> select * from marks;
+Empty set (0.00 sec)
+
+mysql> insert into marks values(1001,"maths",80,1),
+    ->                          (1002,"science",77,1),
+    ->                          (1003,"maths",70,2),
+    -> (1004,"science",71,2),
+    -> (1005,"maths",78,3),
+    -> (1006,"science",72,3);
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from marks;
++----------+---------+-------+------------+
+| marks_Id | subject | score | student_id |
++----------+---------+-------+------------+
+|     1001 | maths   |    80 |          1 |
+|     1002 | science |    77 |          1 |
+|     1003 | maths   |    70 |          2 |
+|     1004 | science |    71 |          2 |
+|     1005 | maths   |    78 |          3 |
+|     1006 | science |    72 |          3 |
++----------+---------+-------+------------+
+6 rows in set (0.00 sec)
+
+
+mysql> select s.student_Id,s.name AS 'student_name',IFNULL(SUM(m.score),-1) AS 'total marks' from students s LEFT JOIN marks m on s.student_Id=m.student_id
+    -> GROUP BY s.student_id;
++------------+-----------------+-------------+
+| student_Id | student_name    | total marks |
++------------+-----------------+-------------+
+|          1 | Rahul Kumar     |         157 |
+|          2 | Raja Yadav      |         141 |
+|          3 | Najmush Saaquib |         150 |
+|          4 | Satyajeet       |          -1 |
+|          5 | Aman Yadav      |          -1 |
+|          6 | Rahul 2.0       |          -1 |
+|          7 | Moni            |          -1 |
+|          8 | Ishi            |          -1 |
++------------+-----------------+-------------+
+8 rows in set (0.01 sec)

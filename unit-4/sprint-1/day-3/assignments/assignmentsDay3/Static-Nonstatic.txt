@@ -1,0 +1,13 @@
+STATIC VARIABLES
+   1:- All static variables are loaded in RAM first.
+   2:-We can access static variables anywhere;
+   3:-static variable can be accessed with or without the object.
+      i.e. static variables can be used anywhere in the class
+   4:- since they are loaded in RAM they will be available for the CPU to execute;
+   
+ NON STATIC VARIABLES
+    1:- All non-static variables present in hard-disk in the form of bytecode;
+    2:- they are not accessible from static fields.  
+    3:-they are not loaded into the RAM initially. so they are not available to the CPU for the execution.
+    4:-We need to create an object to use a non-static variable.
+       after creating an object they available in heap memory  

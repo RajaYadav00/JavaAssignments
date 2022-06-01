@@ -1,0 +1,32 @@
+Q2 : a) What is normalization and why is it needed?
+        b) What is the 2NF? Explain with an example. You don’t need to draw the tables or write
+       the queries. Just mention the schema before and after the second normal form.
+
+
+
+ANS A):  NORMALIZATION:- It is process in which we organise the data in our database to avoid duplicasy and some Anomalies,like insertion anamoly ,update anomaly and delete anamoly;
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+ANS B): 2NF  :- it is known as Second normal form.
+			A table is said to be in second normal only if following conditon is true;
+			
+			1:-Table is in first Normal form;
+			2:- nON prime attributes should not be dependent on the subset of candidate key
+
+
+  Explain with an example. You don’t need to draw the tables or write
+       the queries. Just mention the schema before and after the second normal form.
+
+ CREATE TABLE SCHEMA.Employees((EmpId varchar(5) Primary KEY,ProjId varchar(5) UNIQUE KEY, EmpName varchar(15), ProjName        varchar(20));
+
+As you can see in the upper table it is following 1NF but violating 2NF, because there Non-Prime attributes are partially dependent on the Candidate key,
+but we need fully dpendencies.
+
+So, Lets convert this table in 2NF.
+CREATE TABLE SCHEMA.Employee_Details(EmpID varchar(5) PRIMARY KEY, ProjId varchar(5) FOREIGN KEY REFERENCES(ProjectInfo), EmpName varhcar(20));
+CREATE TABLE SCEHMA.ProjectInfo(ProjId varhcar(5) PRIMARY KEY, ProjName varchar(20));
+
+As you can see now from the schema itself our both Non-Prime attributes are fully dependent on Prime attribute(Candidate Keys), So now the data is is in 2NF.
+             

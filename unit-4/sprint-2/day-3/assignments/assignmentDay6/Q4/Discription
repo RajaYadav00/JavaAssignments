@@ -1,0 +1,43 @@
+What is the use of ‘this’ and ‘super’ keyword in java explain with example.
+
+
+THIS KEY WORD: It points to current object.
+                when we want to point an object from method which is under execution because of the dame
+                object we use this keyword.
+                
+                MAIN WORK OF THIS KEY WORD:
+                1) point to the current object.
+                2)differentiate between local and instance variable.
+                3)Calling a constructor of a class from another constructor of the same class.
+              
+
+
+SUPER KEY WORD : the super key word in java is a reference variable that is used to refer the immediate 
+                  parent class object.
+                  when we create the object of a subclass,an object of parent class is created implicitly
+                  which is referred by the super reference variable.
+                  
+                  USES OF SUPER KEYWORD:
+                  1)super can be used to refer to the immediate parent class object/instance variable.
+                  2)super can be used to invoke the immediate parent class method.
+                  3)super() can be used to invoke immediate parent class constructor.
+                  
+                 example:
+                 class A{
+                     String color="red";
+                  }
+                  class B{
+                   	String color="green";
+                   	
+                   	void printcolor(){
+                     	System.out.println(color);//print green color
+                   	     System.out.println(super.color);//print red color
+                   	   }
+                   	 }
+                   	 class Main{
+                   	 public static void main(String args[]){
+                   	     
+                   	 			A obj=new A();
+                   	 			obj.printcolor();
+                   	 }  
+                   	

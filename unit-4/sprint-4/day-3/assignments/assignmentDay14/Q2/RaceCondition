@@ -1,0 +1,12 @@
+What is a race condition? How will you find and solve race condition show with proper running code ?
+
+
+RACE-CONDITION IN JAVA:-
+                         
+Race condition occurs when more than one thread are trying to access the same method (a part of program which are shared by them)
+this is incorrect behavior of program;
+
+For example one thread is reading data from linked list and other thread is trying to delete the same data;
+this process leads to race condition;
+
+To solve problem of data inconsistency due to race conditIon  java uses SYNCHRONIZED KEYWORD;

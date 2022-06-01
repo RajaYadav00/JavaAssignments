@@ -1,0 +1,52 @@
+
+Qn3:  a) Explain ACID properties with examples.
+         b) what are the disadvantages of indexing
+
+
+ANS  (A): ACID
+               A=ATOMICITY;
+               C=CONSISTENCY
+               I=ISOLATION
+		D=DURABILITY
+    
+          ATOMICTY: It can be defined as process in which entire transaction takes place in one go Or does not happen at all;
+=> IT IS ALSO KNOWN AS ALL OR NON;
+EXAPLE  :  if we trancefer some amount from bank account either amount will transefer and  saving decreases OR ammount will not trancfer and saving amount does not decrease .if  any thing happen in between then ammount is revertet;
+
+
+CONSISTENCY: it means  database is consistent before and after the transaction.and it is achieve by maintaining integrity of constrant;
+
+
+ISOLATION: It means multiple Transaction occur independentaly without disturbing other code or inerferring them;
+
+DURABILITY: if any changes occur in database completey that is successful transaction occur the update and modification are remain even if system fail.
+
+
+Example : There are two People A and B
+	
+X account balance - (4000)
+Y account balance - (300)	
+Total Balance = 7000
+
+Transfer amount of 500 from B to A
+Transaction stars here -
+check if the both Accounts are active
+check if both have sufficient fund to complete the transaction
+
+Y balance    - 500
+X balance     +500
+
+End of transaction;
+
+Amount in X account = 4500
+Amount in Y account = 2500
+	
+----------------------------------------------------------------------------------------------------------------------------------------------------
+   
+ B) what are the disadvantages of indexing:
+  ANS:- Disadvantage of indexing is in in following operation -
+  1)Insertion
+  2)update
+   3)delete
+
+becouse of indexing these ooeration become slow;

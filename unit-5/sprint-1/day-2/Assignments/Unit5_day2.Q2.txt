@@ -1,0 +1,22 @@
+Q2:
+ans:select *,
+    -> CASE
+    -> WHEN Working_hours<=50 THEN 'not allowed'
+    -> WHEN Working_hours<=80 THEN '20'
+    -> WHEN Working_hours<=120 THEN '40'
+    -> END
+    -> AS
+    -> 'Vacation_hours'
+    -> FROM
+    -> faculty;
++-----------+---------+------------+--------+--------+---------------+----------------+
+| FacultyId | Name    | Department | Gender | Salary | Working_hours | Vacation_hours |
++-----------+---------+------------+--------+--------+---------------+----------------+
+|         1 | Akash   | CS         | M      |  50000 |            45 | not allowed    |
+|         2 | Sahil   | EC         | M      |  25000 |            50 | not allowed    |
+|         3 | John    | HSS        | M      | 100000 |            60 | 20             |
+|         4 | Shelley | CS         | F      | 100000 |            80 | 20             |
+|         5 | Anannya | CS         | F      |  75000 |           100 | 40             |
+|         6 | Sia     | HSS        | F      |  60000 |            40 | not allowed    |
++-----------+---------+------------+--------+--------+---------------+----------------+
+6 rows in set (0.01 sec)

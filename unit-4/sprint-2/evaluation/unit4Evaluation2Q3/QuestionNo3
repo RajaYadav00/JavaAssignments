@@ -1,0 +1,23 @@
+Explain about String, StringBuffer, and StringBuilder class with an example. Explain also
+about toString() method in java
+
+
+
+1) String :- String java is a class belong to java.lang package.this string class use to create string object;
+
+2)StringBuffer:-since string is immutable .we can not change the string but in java with help of stringBuffer we can make it mutable;
+      ex; StringBuffer str=new StringBuffer("Raja");
+      String other=new String(str);
+      
+3)StrigBuilder:-we can also make our string mutablbe with help of stringBulider;
+
+
+4)toString():- when we try to print inctance of a variable in java it calles the toString method  witch by default prind (class name @ has code);
+               we can override toString method to print desired output;
+               
+               @Override
+				   public String toString() {
+					    String str="my name raja";
+				     return str;
+				   }
+

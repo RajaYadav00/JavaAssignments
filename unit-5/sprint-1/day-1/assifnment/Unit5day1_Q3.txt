@@ -1,0 +1,14 @@
+Q3
+ans:
+mysql> select title,rating from movie join movie_rating on movie.id=movie_rating.movie_id order by rating desc;
++-----------------+--------+
+| title           | rating |
++-----------------+--------+
+| Civil War       |    8.2 |
+| Toy Story 2     |    8.0 |
+| The Incredibles |    8.0 |
+| Monsters        |    7.9 |
+| Toy Story       |    7.4 |
+| A Bug's Life    |    6.4 |
++-----------------+--------+
+6 rows in set (0.00 sec)

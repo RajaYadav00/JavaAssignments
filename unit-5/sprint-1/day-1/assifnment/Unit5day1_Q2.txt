@@ -1,0 +1,40 @@
+Q2:
+ans:mysql> select * from movie;
++------+-----------------+-----------------+------+----------------+
+| id   | title           | Director        | year | length_minutes |
++------+-----------------+-----------------+------+----------------+
+|    1 | Toy Story       | John Lasseter   | 1996 |             81 |
+|    2 | A Bug's Life    | John Lasseter   | 1998 |             95 |
+|    3 | Toy Story 2     | John Lasseter   | 1999 |             93 |
+|    4 | Monsters        | Inc.Pete Docter | 2001 |             92 |
+|    5 | Civil War       | Andrew Stanton  | 2003 |            107 |
+|    6 | The Incredibles | Brad Bird       | 2004 |            116 |
++------+-----------------+-----------------+------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from Movie_Rating;
++----------+--------+----------------+---------------------+
+| movie_id | rating | domestic_sales | international_sales |
++----------+--------+----------------+---------------------+
+|        5 |    8.2 | 380843261      | 555900000           |
+|        1 |    7.4 | 268492764      | 475066843           |
+|        3 |    8.0 | 206445654      | 417277164           |
+|        2 |    6.4 | 191452396      | 368400000           |
+|        4 |    7.9 | 245852179      | 239163000           |
+|        6 |    8.0 | 261441092      | 370001000           |
++----------+--------+----------------+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> select title,domestic_sales,international_sales from movie inner join movie_rating where movie_rating.domestic_sales<movie_rating.international_sales and movie.id=movie_rating.movie_id;
++-----------------+----------------+---------------------+
+| title           | domestic_sales | international_sales |
++-----------------+----------------+---------------------+
+| Toy Story       | 268492764      | 475066843           |
+| A Bug's Life    | 191452396      | 368400000           |
+| Toy Story 2     | 206445654      | 417277164           |
+| Civil War       | 380843261      | 555900000           |
+| The Incredibles | 261441092      | 370001000           |
++-----------------+----------------+---------------------+
+5 rows in set (0.00 sec)
+
+mysql>
